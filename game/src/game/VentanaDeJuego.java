@@ -59,28 +59,26 @@ public class VentanaDeJuego extends javax.swing.JFrame {
     }
 
     private void verificarEstadoJuego() {
-        if (WIN() == true) {
-            ganar.show();
+        if (ganoJuego()) {
+            ganar.setVisible(true);
             reintentar retry = new reintentar();
-            this.hide();
-            retry.show();
+            this.setVisible(false);
+            retry.setVisible(true);
         }
     }
 
     private Coordenada darNuevaPosicion(Coordenada actual) {
-        int x = actual.x;
-        int y = actual.y;
-        if (x > 0 && tablero.get(x - 1, y) == 16) {
-            return new Coordenada(x - 1, y);
+        if (actual.x > 0 && tablero.get(actual.x - 1, actual.y) == 16) {
+            return new Coordenada(actual.x - 1, actual.y);
         }
-        if (x < 3 && tablero.get(x + 1, y) == 16) {
-            return new Coordenada(x + 1, y);
+        if (actual.x < 3 && tablero.get(actual.x + 1, actual.y) == 16) {
+            return new Coordenada(actual.x + 1, actual.y);
         }
-        if (y < 3 && tablero.get(x, y + 1) == 16) {
-            return new Coordenada(x, y + 1);
+        if (actual.y < 3 && tablero.get(actual.x, actual.y + 1) == 16) {
+            return new Coordenada(actual.x, actual.y + 1);
         }
-        if (y > 0 && tablero.get(x, y - 1) == 16) {
-            return new Coordenada(x, y - 1);
+        if (actual.y > 0 && tablero.get(actual.x, actual.y - 1) == 16) {
+            return new Coordenada(actual.x, actual.y - 1);
         }
         return null;
     }
@@ -504,22 +502,17 @@ public class VentanaDeJuego extends javax.swing.JFrame {
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
 
     }//GEN-LAST:event_formKeyPressed
-    public boolean WIN() {
+    public boolean ganoJuego() {
         int cont = 1;
-        int aux = 0;
-        boolean win = false;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (cont == tablero.get(i, j)) {
-                    aux++;
+                if (cont != tablero.get(i, j)) {
+                    return false;
                 }
                 cont++;
             }
         }
-        if (aux == 16) {
-            win = true;
-        }
-        return win;
+        return true;
     }
 
 
