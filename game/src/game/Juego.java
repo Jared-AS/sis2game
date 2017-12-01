@@ -7,27 +7,17 @@ package game;
 
 public class Juego {
 
-    static Tablero table = new Tablero();
-    static Asignador config = new Asignador();
-    static int[] listaOrdenada;
-
-    public static void main(String Args[]) {
-        table = OrdenarTablero();
-    }
-
-    static Tablero OrdenarTablero() {
-        listaOrdenada = config.orden();
+    public static Tablero GenerarTablero() {
+        Tablero tablero = new Tablero();
+        int[] listaOrdenada = new Asignador().orden();
         int cont = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                table.crear(listaOrdenada[cont], i, j);
+                tablero.crear(listaOrdenada[cont], i, j);
                 cont++;
             }
         }
-        return table;
+        return tablero;
     }
 
-    static int[] getOrden() {
-        return listaOrdenada;
-    }
 }

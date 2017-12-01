@@ -31,8 +31,7 @@ public class other extends javax.swing.JFrame {
     }
 
     public void iniciar() {
-        Juego game = new Juego();
-        tabla = game.OrdenarTablero();
+        tabla = Juego.GenerarTablero();
     }
 
     public String[] lista() {
