@@ -5,11 +5,11 @@
  */
 package game;
 
-public class tablero {
+public class Tablero {
 
     Pieza tabla[][];
 
-    public tablero() {
+    public Tablero() {
         tabla = new Pieza[4][4];
     }
 

@@ -7,7 +7,7 @@ package game;
 
 public class Juego {
 
-    static tablero table = new tablero();
+    static Tablero table = new Tablero();
     static Asignador config = new Asignador();
     static int[] listaOrdenada;
 
@@ -15,7 +15,7 @@ public class Juego {
         table = OrdenarTablero();
     }
 
-    static tablero OrdenarTablero() {
+    static Tablero OrdenarTablero() {
         listaOrdenada = config.orden();
         int cont = 0;
         for (int i = 0; i < 4; i++) {

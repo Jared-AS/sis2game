@@ -18,7 +18,7 @@ public class other extends javax.swing.JFrame {
     int x = 0;
     int y = 0;
 
-    tablero tabla = new tablero();
+    Tablero tabla = new Tablero();
     String[] Indice = new String[16];
 
     public other() {
