@@ -13,8 +13,9 @@ public class Tablero {
         tabla = new Pieza[4][4];
     }
 
-    void set(Pieza A, int x, int y) {
-        tabla[x][y] = A;
+    void intercambiar(Coordenada origen, Coordenada destino) {
+        tabla[destino.x][destino.y].setValue(tabla[origen.x][origen.y].getValue());
+        tabla[origen.x][origen.y].setValue(16);
     }
 
     Pieza get(int x, int y) {

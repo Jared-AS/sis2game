@@ -5,19 +5,16 @@
  */
 package game;
 
-public class Pieza {
+/**
+ *
+ * @author jared
+ */
+public class Coordenada {
 
-    int almacen;
+    public int x, y;
 
-    public Pieza(int pi) {
-        almacen = pi;
-    }
-
-    void setValue(int A) {
-        almacen = A;
-    }
-
-    int getValue() {
-        return almacen;
+    public Coordenada(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }

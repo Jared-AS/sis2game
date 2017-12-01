@@ -5,31 +5,16 @@
  */
 package game;
 
-import java.awt.BorderLayout;
-import java.awt.Image;
-import java.awt.event.KeyEvent;
-import javax.swing.*;
-
 public class VentanaDeJuego extends javax.swing.JFrame {
-
-    /**
-     * Creates new form other
-     */
-    int x = 0;
-    int y = 0;
 
     Tablero tablero = new Tablero();
 
     public VentanaDeJuego() {
         initComponents();
-        inicializarJuego();
-        ganar.setVisible(false);
-        this.setLocationRelativeTo(null);
-    }
-
-    public void inicializarJuego() {
         tablero = Juego.GenerarTablero();
         acomodar();
+        ganar.setVisible(false);
+        this.setLocationRelativeTo(null);
     }
 
     public String[] getListaPiezas() {
@@ -64,33 +49,27 @@ public class VentanaDeJuego extends javax.swing.JFrame {
         j16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[15] + ".jpg")));
     }
 
-    public void move() {
-        Coordenada newPosition = getNewPosition();
-        if (newPosition != null) {
-            tablero.get(newPosition.x, newPosition.y).setValue(tablero.get(x, y).getValue());
-            tablero.get(x, y).setValue(16);
+    public void mover(Coordenada actual) {
+        Coordenada nueva = darNuevaPosicion(actual);
+        if (nueva != null) {
+            tablero.intercambiar(actual, nueva);
         }
-         if (WIN() == true) {
+        acomodar();
+        verificarEstadoJuego();
+    }
+
+    private void verificarEstadoJuego() {
+        if (WIN() == true) {
             ganar.show();
             reintentar retry = new reintentar();
             this.hide();
             retry.show();
         }
-        
-        acomodar();
     }
 
-    class Coordenada {
-
-        public int x, y;
-
-        public Coordenada(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
-    private Coordenada getNewPosition() {
+    private Coordenada darNuevaPosicion(Coordenada actual) {
+        int x = actual.x;
+        int y = actual.y;
         if (x > 0 && tablero.get(x - 1, y).getValue() == 16) {
             return new Coordenada(x - 1, y);
         }
@@ -545,115 +524,67 @@ public class VentanaDeJuego extends javax.swing.JFrame {
 
 
     private void j1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j1MouseClicked
-        x = 0;
-        y = 0;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(0, 0));
     }//GEN-LAST:event_j1MouseClicked
 
     private void j2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j2MouseClicked
-        x = 0;
-        y = 1;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(0, 1));
     }//GEN-LAST:event_j2MouseClicked
 
     private void j3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j3MouseClicked
-        x = 0;
-        y = 2;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(0, 2));
     }//GEN-LAST:event_j3MouseClicked
 
     private void j4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j4MouseClicked
-        x = 0;
-        y = 3;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(0, 3));
     }//GEN-LAST:event_j4MouseClicked
 
     private void j5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j5MouseClicked
-        x = 1;
-        y = 0;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(1, 0));
     }//GEN-LAST:event_j5MouseClicked
 
     private void j6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j6MouseClicked
-        x = 1;
-        y = 1;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(1, 1));
     }//GEN-LAST:event_j6MouseClicked
 
     private void j7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j7MouseClicked
-        x = 1;
-        y = 2;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(1, 2));
     }//GEN-LAST:event_j7MouseClicked
 
     private void j8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j8MouseClicked
-        x = 1;
-        y = 3;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(1, 3));
     }//GEN-LAST:event_j8MouseClicked
 
     private void j9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j9MouseClicked
-        x = 2;
-        y = 0;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(2, 0));
     }//GEN-LAST:event_j9MouseClicked
 
     private void j10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j10MouseClicked
-        x = 2;
-        y = 1;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(2, 1));
     }//GEN-LAST:event_j10MouseClicked
 
     private void j11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j11MouseClicked
-        x = 2;
-        y = 2;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(2, 2));
     }//GEN-LAST:event_j11MouseClicked
 
     private void j12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j12MouseClicked
-        x = 2;
-        y = 3;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(2, 3));
     }//GEN-LAST:event_j12MouseClicked
 
     private void j13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j13MouseClicked
-        x = 3;
-        y = 0;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(3, 0));
     }//GEN-LAST:event_j13MouseClicked
 
     private void j14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j14MouseClicked
-        x = 3;
-        y = 1;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(3, 1));
     }//GEN-LAST:event_j14MouseClicked
 
     private void j15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j15MouseClicked
-        x = 3;
-        y = 2;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(3, 2));
     }//GEN-LAST:event_j15MouseClicked
 
     private void j16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_j16MouseClicked
-        x = 3;
-        y = 3;
-        System.out.println(x + "   " + y);
-        move();
+        mover(new Coordenada(3, 3));
     }//GEN-LAST:event_j16MouseClicked
 
     /**
