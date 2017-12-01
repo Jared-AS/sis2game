@@ -26,7 +26,7 @@ public class other extends javax.swing.JFrame {
         iniciar();
         Indice = lista();
         acomodar();
-        ganar.show();
+        ganar.setVisible(false);
         this.setLocationRelativeTo(null);
     }
 
