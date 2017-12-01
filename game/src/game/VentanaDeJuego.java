@@ -10,7 +10,7 @@ import java.awt.Image;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
 
-public class other extends javax.swing.JFrame {
+public class VentanaDeJuego extends javax.swing.JFrame {
 
     /**
      * Creates new form other
@@ -21,7 +21,7 @@ public class other extends javax.swing.JFrame {
     Tablero tabla = new Tablero();
     String[] Indice = new String[16];
 
-    public other() {
+    public VentanaDeJuego() {
         initComponents();
         iniciar();
         Indice = lista();
@@ -179,7 +179,7 @@ public class other extends javax.swing.JFrame {
         p2.setLayout(p2Layout);
         p2Layout.setHorizontalGroup(
             p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p2Layout.setVerticalGroup(
             p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +202,7 @@ public class other extends javax.swing.JFrame {
         p1.setLayout(p1Layout);
         p1Layout.setHorizontalGroup(
             p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p1Layout.setVerticalGroup(
             p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,7 +224,7 @@ public class other extends javax.swing.JFrame {
         p4.setLayout(p4Layout);
         p4Layout.setHorizontalGroup(
             p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p4Layout.setVerticalGroup(
             p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +246,7 @@ public class other extends javax.swing.JFrame {
         p3.setLayout(p3Layout);
         p3Layout.setHorizontalGroup(
             p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p3Layout.setVerticalGroup(
             p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +268,7 @@ public class other extends javax.swing.JFrame {
         p6.setLayout(p6Layout);
         p6Layout.setHorizontalGroup(
             p6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p6Layout.setVerticalGroup(
             p6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +290,7 @@ public class other extends javax.swing.JFrame {
         p5.setLayout(p5Layout);
         p5Layout.setHorizontalGroup(
             p5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p5Layout.setVerticalGroup(
             p5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,7 +312,7 @@ public class other extends javax.swing.JFrame {
         p8.setLayout(p8Layout);
         p8Layout.setHorizontalGroup(
             p8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p8Layout.setVerticalGroup(
             p8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,7 +334,7 @@ public class other extends javax.swing.JFrame {
         p7.setLayout(p7Layout);
         p7Layout.setHorizontalGroup(
             p7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p7Layout.setVerticalGroup(
             p7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +356,7 @@ public class other extends javax.swing.JFrame {
         p12.setLayout(p12Layout);
         p12Layout.setHorizontalGroup(
             p12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j12, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j12, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p12Layout.setVerticalGroup(
             p12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -378,7 +378,7 @@ public class other extends javax.swing.JFrame {
         p9.setLayout(p9Layout);
         p9Layout.setHorizontalGroup(
             p9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j9, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p9Layout.setVerticalGroup(
             p9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,7 +400,7 @@ public class other extends javax.swing.JFrame {
         p10.setLayout(p10Layout);
         p10Layout.setHorizontalGroup(
             p10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j10, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p10Layout.setVerticalGroup(
             p10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,7 +422,7 @@ public class other extends javax.swing.JFrame {
         p11.setLayout(p11Layout);
         p11Layout.setHorizontalGroup(
             p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p11Layout.setVerticalGroup(
             p11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,7 +444,7 @@ public class other extends javax.swing.JFrame {
         p14.setLayout(p14Layout);
         p14Layout.setHorizontalGroup(
             p14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j14, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p14Layout.setVerticalGroup(
             p14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,7 +466,7 @@ public class other extends javax.swing.JFrame {
         p15.setLayout(p15Layout);
         p15Layout.setHorizontalGroup(
             p15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j15, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j15, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p15Layout.setVerticalGroup(
             p15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -488,7 +488,7 @@ public class other extends javax.swing.JFrame {
         p13.setLayout(p13Layout);
         p13Layout.setHorizontalGroup(
             p13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j13, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p13Layout.setVerticalGroup(
             p13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -510,7 +510,7 @@ public class other extends javax.swing.JFrame {
         p16.setLayout(p16Layout);
         p16Layout.setHorizontalGroup(
             p16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(j16, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(j16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, Short.MAX_VALUE)
         );
         p16Layout.setVerticalGroup(
             p16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,20 +677,21 @@ public class other extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(other.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDeJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(other.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDeJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(other.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDeJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(other.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaDeJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new other().setVisible(true);
+                new VentanaDeJuego().setVisible(true);
             }
         });
     }
