@@ -5,20 +5,24 @@
  */
 package game;
 
-
 public class tablero {
+
     Pieza tabla[][];
-    public tablero(){
-    tabla=new Pieza[4][4];
+
+    public tablero() {
+        tabla = new Pieza[4][4];
     }
-    void set(Pieza A,int x,int y){
-    tabla[x][y]=A;
+
+    void set(Pieza A, int x, int y) {
+        tabla[x][y] = A;
     }
-    Pieza get(int x,int y){
-    return tabla[x][y];
+
+    Pieza get(int x, int y) {
+        return tabla[x][y];
     }
-    Pieza crear(int a){
-    Pieza piezaA=new Pieza(a);
-    return piezaA;
+
+    void crear(int numero, int x, int y) {
+        Pieza pieza = new Pieza(numero);
+        tabla[x][y] = pieza;
     }
 }
