@@ -7,23 +7,22 @@ package game;
 
 public class Tablero {
 
-    Pieza tabla[][];
+    int tabla[][];
 
     public Tablero() {
-        tabla = new Pieza[4][4];
+        tabla = new int[4][4];
     }
 
     void intercambiar(Coordenada origen, Coordenada destino) {
-        tabla[destino.x][destino.y].setValue(tabla[origen.x][origen.y].getValue());
-        tabla[origen.x][origen.y].setValue(16);
+        tabla[destino.x][destino.y] = tabla[origen.x][origen.y];
+        tabla[origen.x][origen.y] = 16;
     }
 
-    Pieza get(int x, int y) {
+    int get(int x, int y) {
         return tabla[x][y];
     }
 
     void crear(int numero, int x, int y) {
-        Pieza pieza = new Pieza(numero);
-        tabla[x][y] = pieza;
+        tabla[x][y] = numero;
     }
 }

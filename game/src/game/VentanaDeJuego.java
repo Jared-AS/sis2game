@@ -22,7 +22,7 @@ public class VentanaDeJuego extends javax.swing.JFrame {
         int cont = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                indices[cont] = "" + tablero.get(i, j).getValue();
+                indices[cont] = "" + tablero.get(i, j);
                 cont++;
             }
         }
@@ -70,16 +70,16 @@ public class VentanaDeJuego extends javax.swing.JFrame {
     private Coordenada darNuevaPosicion(Coordenada actual) {
         int x = actual.x;
         int y = actual.y;
-        if (x > 0 && tablero.get(x - 1, y).getValue() == 16) {
+        if (x > 0 && tablero.get(x - 1, y) == 16) {
             return new Coordenada(x - 1, y);
         }
-        if (x < 3 && tablero.get(x + 1, y).getValue() == 16) {
+        if (x < 3 && tablero.get(x + 1, y) == 16) {
             return new Coordenada(x + 1, y);
         }
-        if (y < 3 && tablero.get(x, y + 1).getValue() == 16) {
+        if (y < 3 && tablero.get(x, y + 1) == 16) {
             return new Coordenada(x, y + 1);
         }
-        if (y > 0 && tablero.get(x, y - 1).getValue() == 16) {
+        if (y > 0 && tablero.get(x, y - 1) == 16) {
             return new Coordenada(x, y - 1);
         }
         return null;
@@ -510,7 +510,7 @@ public class VentanaDeJuego extends javax.swing.JFrame {
         boolean win = false;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (cont == tablero.get(i, j).getValue()) {
+                if (cont == tablero.get(i, j)) {
                     aux++;
                 }
                 cont++;
