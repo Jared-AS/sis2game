@@ -9,44 +9,28 @@ import java.util.*;
 
 public class Asignador {
 
-    Random r = new Random();
-
-    private int randomizador(int a) {
-        int number = r.nextInt(a) + 1;
-        return number;
+    private int generarNumeroAleatorio(int[] lista) {
+        int numero;
+        do {
+            numero = new Random().nextInt(16) + 1;
+        } while (existe(lista, numero));
+        return numero;
     }
 
-    public int[] orden() {
-        int a[] = new int[16];
+    public int[] asignarNumeros() {
+        int lista[] = new int[16];
         for (int i = 0; i < 16; i++) {
-            int in = randomizador(16);
-            if (i == 0) {
-                a[i] = in;
-            } else {
-                if (inspector(a, in) == false) {
-                    a[i] = in;
-                } else {
-                    while (inspector(a, in) == true) {
-                        in = randomizador(16);
-                    }
-                    a[i] = in;
-                }
+            lista[i] = generarNumeroAleatorio(lista);
+        }
+        return lista;
+    }
+
+    private boolean existe(int[] lista, int indice) {
+        for (int i = 0; i < 16; i++) {
+            if (lista[i] == indice) {
+                return true;
             }
         }
-
-        return a;
+        return false;
     }
-
-    private boolean inspector(int[] array, int indice) {
-        boolean resp = false;
-        for (int i = 0; i < 16; i++) {
-            if (array[i] != 0) {
-                if (array[i] == indice) {
-                    resp = true;
-                }
-            }
-        }
-        return resp;
-    }
-
 }
