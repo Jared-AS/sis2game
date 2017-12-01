@@ -18,69 +18,65 @@ public class VentanaDeJuego extends javax.swing.JFrame {
     int x = 0;
     int y = 0;
 
-    Tablero tabla = new Tablero();
-    String[] Indice = new String[16];
+    Tablero tablero = new Tablero();
 
     public VentanaDeJuego() {
         initComponents();
-        iniciar();
-        Indice = lista();
-        acomodar();
+        inicializarJuego();
         ganar.setVisible(false);
         this.setLocationRelativeTo(null);
     }
 
-    public void iniciar() {
-        tabla = Juego.GenerarTablero();
+    public void inicializarJuego() {
+        tablero = Juego.GenerarTablero();
+        acomodar();
     }
 
-    public String[] lista() {
+    public String[] getListaPiezas() {
+        String[] indices = new String[16];
         int cont = 0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                Indice[cont] = "" + tabla.get(i, j).getValue();
+                indices[cont] = "" + tablero.get(i, j).getValue();
                 cont++;
             }
         }
-        return Indice;
+        return indices;
     }
 
     public void acomodar() {
-        if (WIN() == true) {
-            ganar.show();
-            reintentar retry = new reintentar();
-            this.hide();
-            retry.show();
-        }
-        //imagenes hechas en:
-        //http://resizeimage.net/
-        //http://www.imagechef.com/ic/fragment/addonlogin.jsp
-
-        j1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[0] + ".jpg")));
-        j2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[1] + ".jpg")));
-        j3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[2] + ".jpg")));
-        j4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[3] + ".jpg")));
-        j5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[4] + ".jpg")));
-        j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[5] + ".jpg")));
-        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[6] + ".jpg")));
-        j8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[7] + ".jpg")));
-        j9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[8] + ".jpg")));
-        j10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[9] + ".jpg")));
-        j11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[10] + ".jpg")));
-        j12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[11] + ".jpg")));
-        j13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[12] + ".jpg")));
-        j14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[13] + ".jpg")));
-        j15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[14] + ".jpg")));
-        j16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + Indice[15] + ".jpg")));
+        String[] indices = getListaPiezas();
+        j1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[0] + ".jpg")));
+        j2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[1] + ".jpg")));
+        j3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[2] + ".jpg")));
+        j4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[3] + ".jpg")));
+        j5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[4] + ".jpg")));
+        j6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[5] + ".jpg")));
+        j7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[6] + ".jpg")));
+        j8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[7] + ".jpg")));
+        j9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[8] + ".jpg")));
+        j10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[9] + ".jpg")));
+        j11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[10] + ".jpg")));
+        j12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[11] + ".jpg")));
+        j13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[12] + ".jpg")));
+        j14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[13] + ".jpg")));
+        j15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[14] + ".jpg")));
+        j16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/" + indices[15] + ".jpg")));
     }
 
     public void move() {
         Coordenada newPosition = getNewPosition();
         if (newPosition != null) {
-            tabla.get(newPosition.x, newPosition.y).setValue(tabla.get(x, y).getValue());
-            tabla.get(x, y).setValue(16);
+            tablero.get(newPosition.x, newPosition.y).setValue(tablero.get(x, y).getValue());
+            tablero.get(x, y).setValue(16);
         }
-        Indice = lista();
+         if (WIN() == true) {
+            ganar.show();
+            reintentar retry = new reintentar();
+            this.hide();
+            retry.show();
+        }
+        
         acomodar();
     }
 
@@ -95,16 +91,16 @@ public class VentanaDeJuego extends javax.swing.JFrame {
     }
 
     private Coordenada getNewPosition() {
-        if (x > 0 && tabla.get(x - 1, y).getValue() == 16) {
+        if (x > 0 && tablero.get(x - 1, y).getValue() == 16) {
             return new Coordenada(x - 1, y);
         }
-        if (x < 3 && tabla.get(x + 1, y).getValue() == 16) {
+        if (x < 3 && tablero.get(x + 1, y).getValue() == 16) {
             return new Coordenada(x + 1, y);
         }
-        if (y < 3 && tabla.get(x, y + 1).getValue() == 16) {
+        if (y < 3 && tablero.get(x, y + 1).getValue() == 16) {
             return new Coordenada(x, y + 1);
         }
-        if (y > 0 && tabla.get(x, y - 1).getValue() == 16) {
+        if (y > 0 && tablero.get(x, y - 1).getValue() == 16) {
             return new Coordenada(x, y - 1);
         }
         return null;
@@ -535,7 +531,7 @@ public class VentanaDeJuego extends javax.swing.JFrame {
         boolean win = false;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                if (cont == tabla.get(i, j).getValue()) {
+                if (cont == tablero.get(i, j).getValue()) {
                     aux++;
                 }
                 cont++;
